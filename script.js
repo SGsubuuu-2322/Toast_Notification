@@ -11,5 +11,12 @@ const messages = [
 button.addEventListener("click", () => createNotifications());
 
 function createNotifications() {
-  console.log("123");
+  const notif = document.createElement("div");
+  notif.classList.add("toast");
+  notif.innerText = getRandomMessage();
+  toasts.appendChild(notif);
+}
+
+function getRandomMessage() {
+  return messages[Math.floor(Math.random() * messages.length)];
 }
