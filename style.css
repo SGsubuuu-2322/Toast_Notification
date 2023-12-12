@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: rgb(48, 166, 216);
   font-family: "Young serif";
   display: flex;
   flex-direction: column;
@@ -13,4 +14,23 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.btn {
+  background-color: rebeccapurple;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit;
+  letter-spacing: 0.9px;
+}
+
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.96);
 }
