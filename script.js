@@ -8,12 +8,15 @@ const messages = [
   "message-Four",
 ];
 
+const types = ["info", "success", "error"];
+
 button.addEventListener("click", () => createNotifications());
 
-function createNotifications() {
+function createNotifications(message = null, type = null) {
   const notif = document.createElement("div");
   notif.classList.add("toast");
-  notif.innerText = getRandomMessage();
+  notif.classList.add(type ? type : getRandomType());
+  notif.innerText = message ? message : getRandomMessage();
   toasts.appendChild(notif);
 
   setTimeout(() => {
@@ -23,4 +26,7 @@ function createNotifications() {
 
 function getRandomMessage() {
   return messages[Math.floor(Math.random() * messages.length)];
+}
+function getRandomType() {
+  return types[Math.floor(Math.random() * types.length)];
 }
